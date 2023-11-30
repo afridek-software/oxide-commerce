@@ -20,6 +20,3 @@ name = "javascript"
     "jest",
     "mongo"
   ]
-
-[[transformers]]
-name = "prettier"
