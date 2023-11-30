@@ -11,6 +11,11 @@ import { databaseConfig } from '../configs';
 import { Logger } from '../utils';
 
 export class Database {
+  private _nodeEnv: typeof process.env.NODE_ENV;
+
+  constructor() {
+    this._nodeEnv = process.env.NODE_ENV;
+  }
   /**
    * Method to connect to MongoDB.
    * @returns {Promise<Connection>}
@@ -19,7 +24,7 @@ export class Database {
   public async connectMongo(): Promise<Connection> {
     try {
       await mongoose.connect(
-        process.env.NODE_ENV === 'development'
+        this._nodeEnv === 'development'
           ? databaseConfig.development.mongoUrl
           : databaseConfig.production.mongoUrl
       );
@@ -35,31 +40,13 @@ export class Database {
   }
 
   /**
-   * Method to close the MongoDB connection.
-   * @returns {Promise<void>}
-   * @public
-   */
-  public async closeMongo(): Promise<void> {
-    try {
-      return await mongoose.connection.close();
-    } catch (error: any) {
-      Logger.error('Failed to close MongoDB connection.', {
-        error_name: error.constructor.name,
-        error_message: error.message,
-        error_stack: error.stack,
-      });
-      throw error;
-    }
-  }
-
-  /**
    * Method to connect to Redis.
    * @returns {Redis} The Redis client.
    * @public
    */
   public redisClient(): Redis {
     return new Redis(
-      process.env.NODE_ENV === 'development'
+      this._nodeEnv === 'development'
         ? databaseConfig.development.redisUrl
         : databaseConfig.production.redisUrl
     );
