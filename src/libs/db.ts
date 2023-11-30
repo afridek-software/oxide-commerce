@@ -21,7 +21,7 @@ export class Database {
       await mongoose.connect(
         process.env.NODE_ENV === 'development'
           ? databaseConfig.development.mongoUrl
-          : databaseConfig.production.mongoUrl,
+          : databaseConfig.production.mongoUrl
       );
       return mongoose.connection;
     } catch (error: any) {
@@ -61,7 +61,7 @@ export class Database {
     return new Redis(
       process.env.NODE_ENV === 'development'
         ? databaseConfig.development.redisUrl
-        : databaseConfig.production.redisUrl,
+        : databaseConfig.production.redisUrl
     );
   }
 }
