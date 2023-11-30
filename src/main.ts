@@ -70,6 +70,5 @@ server.on('error', (e: any) => {
       error_message: `${error}`,
       error_stack: error.stack,
     });
-    process.exit(1);
   }
 })();
