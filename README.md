@@ -1,5 +1,5 @@
 <div align="center">
-  <a alt="Oxide Commerce logo" href="https://github.com/afridek-software/oxide-commerce" target="_blank" rel="noreferrer"><img src="" width="45"></a>
+  <a alt="Oxide Commerce logo" href="https://github.com/afridek-software/oxide-commerce" target="_blank" rel="noreferrer"><img src="https://github.com/afridek-software/oxide-commerce/assets/80452137/03060597-c03a-47cb-8e56-fbb3382c2560" width="250"></a>
 
   <p align="center">
 ✨ A high-performance e-commerce API built on Node.js and Express to empower your online business with scalability and reliability. 
