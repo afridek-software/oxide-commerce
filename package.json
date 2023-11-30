@@ -1,9 +1,9 @@
 {
-  "name": "@oxide-commerce/source",
+  "name": "@afridek-software/oxide-commerce",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "npm run build && node dist/oxide-commerce/main.js",
     "build": "nx build",
     "test": "nx test"
   },
