@@ -26,7 +26,7 @@ export class Database {
       await mongoose.connect(
         this._enviroment === 'development'
           ? databaseConfig.development.mongoUrl
-          : databaseConfig.production.mongoUrl,
+          : databaseConfig.production.mongoUrl
       );
       return mongoose.connection;
     } catch (error: any) {
@@ -48,7 +48,7 @@ export class Database {
     return new Redis(
       this._enviroment === 'development'
         ? databaseConfig.development.redisUrl
-        : databaseConfig.production.redisUrl,
+        : databaseConfig.production.redisUrl
     );
   }
 }

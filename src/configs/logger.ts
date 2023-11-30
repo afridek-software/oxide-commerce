@@ -22,12 +22,12 @@ export const loggerConfig = {
       level: 'info',
       format: winston.format.combine(
         winston.format.json(),
-        winston.format.prettyPrint(),
+        winston.format.prettyPrint()
       ),
     }),
 
     production: new LogtailTransport(
-      new Logtail(process.env.LOGTAIL_ACCESS_TOKEN ?? ''),
+      new Logtail(process.env.LOGTAIL_ACCESS_TOKEN ?? '')
     ),
   },
 };

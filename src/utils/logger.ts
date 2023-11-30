@@ -16,7 +16,7 @@ class LoggerUtil {
   createLogger(): winston.Logger {
     if (!this._enviroment) {
       throw new Error(
-        `Invalid configuration for environment: ${this._enviroment}`,
+        `Invalid configuration for environment: ${this._enviroment}`
       );
     }
 
