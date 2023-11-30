@@ -11,10 +11,10 @@ import { databaseConfig } from '../configs';
 import { Logger } from '../utils';
 
 export class Database {
-  private _nodeEnv: typeof process.env.NODE_ENV;
+  private _enviroment: typeof process.env.NODE_ENV;
 
   constructor() {
-    this._nodeEnv = process.env.NODE_ENV;
+    this._enviroment = process.env.NODE_ENV;
   }
   /**
    * Method to connect to MongoDB.
@@ -24,7 +24,7 @@ export class Database {
   public async connectMongo(): Promise<Connection> {
     try {
       await mongoose.connect(
-        this._nodeEnv === 'development'
+        this._enviroment === 'development'
           ? databaseConfig.development.mongoUrl
           : databaseConfig.production.mongoUrl
       );
@@ -46,7 +46,7 @@ export class Database {
    */
   public redisClient(): Redis {
     return new Redis(
-      this._nodeEnv === 'development'
+      this._enviroment === 'development'
         ? databaseConfig.development.redisUrl
         : databaseConfig.production.redisUrl
     );

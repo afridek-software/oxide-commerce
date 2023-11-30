@@ -8,15 +8,20 @@ import winston from 'winston';
 import { loggerConfig } from '../configs';
 
 class LoggerUtil {
-  createLogger(): winston.Logger {
-    const environment = process.env.NODE_ENV;
+  private _enviroment: typeof process.env.NODE_ENV;
 
-    if (!environment) {
-      throw new Error(`Invalid configuration for environment: ${environment}`);
+  constructor() {
+    this._enviroment = process.env.NODE_ENV;
+  }
+  createLogger(): winston.Logger {
+    if (!this._enviroment) {
+      throw new Error(
+        `Invalid configuration for environment: ${this._enviroment}`
+      );
     }
 
     const transports =
-      environment === 'production'
+      this._enviroment === 'production'
         ? loggerConfig.transports.production
         : loggerConfig.transports.development;
 
