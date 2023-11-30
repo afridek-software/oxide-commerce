@@ -40,4 +40,3 @@ export const databaseConfig: DatabaseConfig = {
     redisUrl: REDIS_UPSTASH_URL,
   },
 };
-
