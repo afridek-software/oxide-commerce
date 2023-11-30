@@ -4,8 +4,11 @@
   <p align="center">
 ✨ A high-performance e-commerce API built on Node.js and Express to empower your online business with scalability and reliability. 
 </p>
-
-<a href="">
+  <a href="https://app.deepsource.com/gh/afridek-software/oxide-commerce/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/afridek-software/oxide-commerce.svg/?label=active+issues&show_trend=true&token=lnd5V48XPDyTN_3j5oKwix20"/></a>
+  <a href="https://github.com/afridek-software/oxide-commerce/actions/workflows/nx-cloud.yml">
+    <img src="https://github.com/afridek-software/oxide-commerce/actions/workflows/nx-cloud.yml/badge.svg?branch=main"/>
+  </a>
+  <a href="">
     <img src="https://img.shields.io/github/repo-size/afridek-software/oxide-commerce"/>
   </a>
    <a href="https://github.com/afridek-software/oxide-commerce/blob/main/package.json">
