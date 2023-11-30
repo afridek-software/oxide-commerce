@@ -11,9 +11,9 @@ import http from 'http';
 import ip from 'ip';
 import os from 'os';
 
-import { app } from './configs';
-import { Database } from './libs';
-import { Logger } from './utils';
+import { app } from './api/v1/configs';
+import { Database } from './api/v1/libs';
+import { Logger } from './api/v1/utils';
 
 dotenv.config();
 
